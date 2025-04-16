@@ -1,0 +1,38 @@
+{
+  "name": "@iweinzierl/node-logging-extension",
+  "version": "1.0.0",
+  "description": "Lightweight logging library enabling console logging and http logging.\"",
+  "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "gh-login": "npm login --registry=https://npm.pkg.github.com",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iweinzierl/node-logging-extension.git"
+  },
+  "keywords": [
+    "nodejs",
+    "logging",
+    "npm"
+  ],
+  "author": "Ingo Weinzierl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iweinzierl/node-logging-extension/issues"
+  },
+  "homepage": "https://github.com/iweinzierl/node-logging-extension#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "kleur": "^4.1.5",
+    "winston": "^3.17.0"
+  }
+}
