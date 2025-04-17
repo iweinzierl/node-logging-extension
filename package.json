@@ -1,13 +1,14 @@
 {
   "name": "@iweinzierl/node-logging-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight logging library enabling console logging and http logging.\"",
   "main": "index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "files": [
-    "dist"
+    "index.js",
+    "lib"
   ],
   "scripts": {
     "gh-login": "npm login --registry=https://npm.pkg.github.com",
