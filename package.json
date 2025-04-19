@@ -1,6 +1,6 @@
 {
   "name": "@iweinzierl/node-logging-extension",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lightweight logging library enabling console logging and http logging.\"",
   "main": "index.js",
   "publishConfig": {
