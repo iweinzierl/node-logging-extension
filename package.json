@@ -1,6 +1,6 @@
 {
   "name": "@iweinzierl/node-logging-extension",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Lightweight logging library enabling console logging and http logging.\"",
   "main": "index.js",
   "publishConfig": {
@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "gh-login": "npm login --registry=https://npm.pkg.github.com",
-    "test": "jest"
+    "test": "jest",
+    "withLogger": "node runWithLogger.js"
   },
   "repository": {
     "type": "git",
