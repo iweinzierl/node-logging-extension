@@ -20,6 +20,21 @@ describe('createLogger', () => {
     if (fs.existsSync(errLogPath)) fs.unlinkSync(errLogPath);
   });
 
+  it('should include file metadata in the log output', (done) => {
+    const outLogPath = path.join(logPath, `${logFileBaseName}-out.log`);
+    const errLogPath = path.join(logPath, `${logFileBaseName}-err.log`);
+
+    logger.info('Testing file metadata');
+
+    // Wait for logs to be written
+    setTimeout(() => {
+      expect(fs.existsSync(outLogPath)).toBe(true);
+      const outLogContent = fs.readFileSync(outLogPath, 'utf8');
+      expect(outLogContent).toContain('[logger.test.js]');
+      done();
+    }, 200); // Adjust timeout if necessary
+  });
+
   it('should log a debug message', () => {
     const spy = jest.spyOn(logger, 'debug').mockImplementation(() => {});
     logger.debug('This is a debug message');
@@ -45,14 +60,6 @@ describe('createLogger', () => {
     const spy = jest.spyOn(logger, 'error').mockImplementation(() => {});
     logger.error('This is an error message');
     expect(spy).toHaveBeenCalledWith('This is an error message');
-    spy.mockRestore();
-  });
-
-  it('should include file metadata in the log output', () => {
-    const spy = jest.spyOn(logger, 'info').mockImplementation((message) => {
-      expect(message).toContain('[logger.test.js]');
-    });
-    logger.info('Testing file metadata');
     spy.mockRestore();
   });
 
